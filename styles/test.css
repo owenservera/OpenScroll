@@ -1,0 +1,272 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #000000;
+  color: #e0e0e0;
+}
+
+* {
+  box-sizing: border-box;
+
+}
+
+.App {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Headers */
+h1, h2, h3 {
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.5rem; /* Increased font size */
+}
+
+.conversations-container {
+  width: 70%;
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 0; /* Remove padding to prevent extra space */
+  position: relative;
+  overflow-y: auto;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1024px) {
+  .conversations-container {
+    max-width: 90%;
+  }
+}
+
+/* Conversation block styling */
+.conversation-bubble {
+  display: flex; /* Set to flex */
+  flex-direction: column; /* Arrange children in a column */
+  max-width: 70%;
+  padding: 1rem;
+  margin: 2rem auto;
+  box-sizing: border-box;
+  background-color: #1e1e1e;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+
+/* Center and style the conversation title */
+.conversation-title {
+  text-align: left;
+  width: 100%; /* Ensure it takes full width */
+  border-bottom: 1px solid #444;
+  font-size: 2.3rem;
+  font-style: italic;
+  margin: 0.1rem 0 3rem; /* Adjust margins for better spacing */
+  padding-bottom: 10px;
+  color: #ffffff;
+}
+
+/* Messages styling */
+.message-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  align-items: stretch; /* Change this from flex-start */
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  margin-top: 1rem;
+}
+.message {
+  border-radius: 15px;
+  width: 98%;
+  word-wrap: break-word;
+  position: relative;
+  box-sizing: border-box;
+  
+  display: inline-block;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+}
+
+.message.user {
+  width: fit-content;
+  max-width: 70%;
+  background-color: #3a3a3a;
+  color: #ffffff;
+  text-align: left;
+  align-self: flex-end;
+  margin-left: auto;
+  margin-right: 0; /* Add this to ensure right alignment */
+  padding: 10px 15px;
+  border-radius: 15px;
+  word-wrap: break-word;
+}
+.message.assistant {
+  color: #e0e0e0;
+  text-align: left;
+  align-self: flex-start;
+  margin-right: auto;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 1rem; /* Increased font size */
+  background-color: #3b3b3b;
+  color: #e0e0e0;
+}
+
+th, td {
+  border: 1px solid #272727;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+tr:nth-child(even) {
+  background-color: #333;
+}
+
+/* Code Header Styling */
+.code-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2e323a;
+  padding: 0.3125rem 0.625rem;
+  border-radius: 0.625rem 0.625rem 0 0;
+  margin-bottom: 0;
+}
+
+.code-language {
+  
+  font-size: 0.85rem;
+}
+
+/* Code Snippet Highlighting */
+pre {
+  background: #000000;
+  
+  padding: 1rem;
+  border-radius: 0 0 0.875rem 0.875rem;
+  overflow-x: auto;
+  line-height: 1.6;
+  
+  margin: 0;
+  border: 1px solid #3c4048;
+}
+
+/* Buttons and Interactivity */
+.copy-button {
+  background: linear-gradient(135deg, #5e5f67, #3d3e44);
+  color: #ffffff;
+  border: none;
+  border-radius: 0.625rem;
+  padding: 0.5rem 0.5rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  margin-left: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+}
+
+.copy-button:hover {
+  background: linear-gradient(135deg, #6f707a, #4c4d55);
+  color: #e6b465;
+}
+
+.copy-button:active {
+  transform: scale(0.98);
+}
+a {
+  color: #4a90e2; /* Softer blue color */
+  text-decoration: none; /* Remove underline */
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+}
+
+a:hover {
+  color: #357ab8; /* Slightly darker blue on hover */
+}
+
+/* General Button Styling */
+.scroll-button, .capture-link-button {
+  position: fixed;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+  color: rgb(255, 255, 255);
+  transition: color 0.3s ease-in, filter 0.3s ease-in;
+  width: 120px; /* Fixed width */
+  height: 50px; /* Fixed height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-button {
+  top: 3rem;
+  left: 2%;
+}
+
+.capture-link-button {
+  top: 3rem;
+  right: 3%;
+}
+
+.scroll-button:hover, .capture-link-button:hover {
+  
+  color: rgb(112, 37, 37);
+  font-weight: bold;
+}
+.capture-link-button.clicked {
+  filter: url(#pixelate);
+  transition: none;
+}
+tip-button:hover 
+    {
+    position:relative;
+    left: 3px;
+    }
+.tip-button:active 
+    {
+    color:gold;
+    }
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 4px;
+}

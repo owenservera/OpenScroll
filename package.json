@@ -9,19 +9,46 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ethersproject/providers": "^5.7.2",
+    "@svgr/webpack": "^8.1.0",
+    "@vercel/analytics": "^1.4.1",
+    "babel-plugin-styled-components": "^2.1.4",
+    "ethers": "^6.13.4",
+    "highlight.js": "^11.10.0",
+    "marked": "^15.0.3",
+    "mathjax": "^3.2.2",
+    "mathjax-full": "^3.2.2",
+    "mongodb": "^6.5.0",
+    "next": "^15.1.0",
+    "next-compose-plugins": "^2.2.1",
+    "next-images": "^1.8.5",
+    "next-pwa": "^5.6.0",
+    "next-sitemap": "^4.2.3",
+    "pwa": "^1.9.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.1.0"
+    "react-infinite-scroll-component": "^6.1.0",
+    "react-router-dom": "^7.0.1",
+    "styled-components": "^6.1.13",
+    "vercel": "^39.2.0",
+    "web-vitals": "^4.2.4",
+    "web3": "^4.15.0",
+    "webpack-bundle-analyzer": "^4.10.2"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@babel/core": "^7.26.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
+    "autoprefixer": "^10.0.1",
+    "babel-loader": "^9.2.1",
+    "critters": "^0.0.23",
+    "cross-env": "^7.0.3",
     "eslint": "^9",
     "eslint-config-next": "15.1.0",
-    "@eslint/eslintrc": "^3"
+    "@eslint/eslintrc": "^3",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   }
 }
