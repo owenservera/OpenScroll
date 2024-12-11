@@ -2,6 +2,8 @@
 @media (max-width: 768px) {
   /* CSS Reset and Base Styles */
   :root {
+    --nav-height: 60px;
+    --safe-area-top: calc(env(safe-area-inset-top, 0px) + var(--nav-height));
     --safe-area-top: env(safe-area-inset-top, 0px);
     --safe-area-bottom: env(safe-area-inset-bottom, 0px);
     --safe-area-left: env(safe-area-inset-left, 0px);
@@ -202,134 +204,14 @@
     font-weight: 600;
   }
 
-  /* Copy Button */
-  .copy-button {
-    padding: var(--spacing-xs) var(--spacing-sm);
-    font-size: var(--font-size-sm);
-    background: linear-gradient(135deg, #5e5f67, #3d3e44);
-    color: var(--color-text-primary);
-    border: none;
-    border-radius: var(--radius-md);
-    cursor: pointer;
-    transition: all 0.2s ease;
-    white-space: nowrap;
-    user-select: none;
+  @media (max-width: 768px) {
+    .NavContainer {
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
   }
-
-  .copy-button:active {
-    transform: scale(0.95);
-    background: linear-gradient(135deg, #6f707a, #4c4d55);
-  }
-
-  /* Original Button Styles - Keeping for compatibility */
-  .scroll-button,
-  .capture-link-button {
-    --button-size: clamp(40px, 8vw, 50px);
-    position: fixed;
-    width: var(--button-size);
-    height: var(--button-size);
-    background: rgba(30, 30, 30, 0.8);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: none;
-    border-radius: 50%;
-    color: #ffffff;
-    font-size: clamp(1.4rem, 4vw, 1.6rem);
-    z-index: 1000;
-    display: grid;
-    place-items: center;
-    cursor: pointer;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    touch-action: manipulation;
-  }
-
-  .scroll-button {
-    top: max(3rem, env(safe-area-inset-top) + 1rem);
-    left: max(10px, env(safe-area-inset-left));
-  }
-
-  .capture-link-button {
-    top: max(3rem, env(safe-area-inset-top) + 1rem);
-    right: max(10px, env(safe-area-inset-right));
-  }
-
-  /* Radial Menu */
-  .radial-menu-container {
-    position: fixed;
-    bottom: calc(var(--safe-area-bottom) + 1rem);
-    right: max(10px, env(safe-area-inset-right));
-    z-index: 1000;
-    width: 200px;
-    height: 200px;
-  }
-
-  .menu-button,
-  .radial-menu-container .scroll-button,
-  .radial-menu-container .share-button {
-    --button-size: clamp(45px, 10vw, 55px);
-    position: absolute;
-    width: var(--button-size);
-    height: var(--button-size);
-    border-radius: 50%;
-    background: rgba(30, 30, 30, 0.9);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    color: var(--color-text-primary);
-    border: none;
-    font-size: clamp(1.4rem, 4vw, 1.6rem);
-    display: grid;
-    place-items: center;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    touch-action: manipulation;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  }
-
-  .menu-button {
-    bottom: 0;
-    right: 0;
-    z-index: 1001;
-    background: rgba(40, 40, 40, 0.95);
-  }
-
-  .radial-menu-container .scroll-button,
-  .radial-menu-container .share-button {
-    bottom: 0;
-    right: 0;
-    opacity: 0;
-    pointer-events: none;
-    visibility: hidden;
-    transform-origin: center;
-  }
-
-  .radial-menu-container .scroll-button.visible {
-    opacity: 1;
-    pointer-events: auto;
-    visibility: visible;
-    transform: translateY(-100px);
-  }
-
-  .radial-menu-container .share-button.visible {
-    opacity: 1;
-    pointer-events: auto;
-    visibility: visible;
-    transform: translate(-80px, -80px);
-  }
-
-  .menu-button:active {
-    transform: scale(0.92);
-    background: rgba(50, 50, 50, 0.95);
-  }
-
-  .radial-menu-container .scroll-button:active,
-  .radial-menu-container .share-button:active {
-    transform: scale(0.92);
-    background: rgba(40, 40, 40, 0.95);
-  }
-
-  .radial-menu-container .scroll-button.visible[style*="scale(1.1)"],
-  .radial-menu-container .share-button.visible[style*="scale(1.1)"] {
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-    background: rgba(50, 50, 50, 0.95);
+  .MobileContainer {
+    transition: padding-top 0.3s ease;
   }
 
   /* Links */
