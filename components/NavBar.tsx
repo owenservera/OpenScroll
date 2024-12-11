@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
 
@@ -48,7 +48,6 @@ const NavButton = styled.button<{ $isActive?: boolean }>`
 
 const NavBar = () => {
   const router = useRouter();
-  const [isClicked, setIsClicked] = useState(false);
   const [isAutoScrolling, setIsAutoScrolling] = useState(false);
   const autoScrollRef = useRef<number | null>(null);
   
@@ -64,7 +63,7 @@ const NavBar = () => {
     }
   };
 
-  const toggleAutoScroll = useCallback(() => {
+  const toggleAutoScroll = () => {
     if (isAutoScrolling) {
       if (autoScrollRef.current) {
         window.cancelAnimationFrame(autoScrollRef.current);
@@ -85,9 +84,8 @@ const NavBar = () => {
       autoScrollRef.current = requestAnimationFrame(scroll);
       setIsAutoScrolling(true);
     }
-  }, [isAutoScrolling]);
+  };
 
-  // Clean up auto-scroll on unmount
   React.useEffect(() => {
     return () => {
       if (autoScrollRef.current) {
@@ -96,22 +94,60 @@ const NavBar = () => {
     };
   }, []);
 
+  const generateSessionId = () => {
+    return 'xxxx-xxxx-xxxx-xxxx'.replace(/[x]/g, () => {
+      return (Math.random() * 16 | 0).toString(16);
+    });
+  };
+
   const captureLink = async () => {
-    // Existing captureLink implementation
-    // Reference to CaptureLinkButton.js for implementation details
-    startLine: 8
-    endLine: 63
+    try {
+      const link = await navigator.clipboard.readText();
+      const validPrefix = 'https://chatgpt.com/share/';
+      
+      if (!link || !link.startsWith(validPrefix)) {
+        alert(`Clipboard must contain a valid ChatGPT share link`);
+        return;
+      }
+
+      const userData = {
+        deviceType: /Mobi|Android/i.test(navigator.userAgent) ? 'mobile' : 'desktop',
+        operatingSystem: navigator.platform,
+        browser: navigator.userAgent,
+        browserVersion: navigator.appVersion,
+        sessionId: sessionStorage.getItem('sessionId') || generateSessionId(),
+        timestamp: new Date().toISOString(),
+        referrerUrl: document.referrer,
+        pageUrl: window.location.href,
+      };
+
+      if (!sessionStorage.getItem('sessionId')) {
+        sessionStorage.setItem('sessionId', userData.sessionId);
+      }
+
+      const response = await fetch('/api/links', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ link, userData }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to save link');
+      }
+
+      alert('Link captured!');
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Failed to capture link');
+    }
   };
 
   return (
     <NavContainer>
       <NavButton onClick={handleRefresh}>↻</NavButton>
-      <NavButton 
-        onClick={captureLink}
-        className={isClicked ? 'clicked' : ''}
-      >
-        +
-      </NavButton>
+      <NavButton onClick={captureLink}>+</NavButton>
       <NavButton 
         onClick={toggleAutoScroll}
         $isActive={isAutoScrolling}
