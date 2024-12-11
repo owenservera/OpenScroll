@@ -1,13 +1,24 @@
-// pages/_app.tsx
 import "@/styles/globals.css";
+import "@/styles/mobile.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-
+import { useEffect } from "react";
+import { useRouter } from "next/router";
+import { isMobile as checkMobile } from "@/lib/isMobile"; // Renamed import
 
 export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+
+  useEffect(() => {
+    if (checkMobile() && !router.pathname.startsWith('/m')) { // Using renamed import
+      router.push(`/m${router.pathname}`);
+    }
+  }, [router.pathname]);
+
   return (
     <>
       <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         {/* Global structured data */}
         <script
           type="application/ld+json"
@@ -20,7 +31,7 @@ export default function App({ Component, pageProps }: AppProps) {
               description: "Unveil knowledge and ideas with ease.",
               creator: {
                 "@type": "Person",
-                name: "The Scroll", // Replace with your name or brand
+                name: "The Scroll",
               },
               datePublished: "2024-01-01",
               applicationCategory: "SocialNetworkingApplication",
