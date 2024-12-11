@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
+import { useRouter } from 'next/router';
 import Conversations from '@/lib/Conversations';
-import ScrollButton from '@/lib/ScrollButton';
-import CaptureLinkButton from '@/lib/CaptureLinkButton';
+import RadialMenu from '@/components/RadialMenu';
 
 const MobileContainer = styled.div`
   display: flex;
@@ -14,19 +14,10 @@ const MobileContainer = styled.div`
   overflow-x: hidden;
 `;
 
-const ButtonContainer = styled.div`
-  position: fixed;
-  top: 3rem;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 15px;
-  z-index: 1000;
-`;
-
 const MobileHomePage = () => {
+  const router = useRouter();
+
   useEffect(() => {
-    // MathJax configuration (keeping your existing math rendering setup)
     window.MathJax = {
       tex: {
         inlineMath: [['$', '$'], ['\\(', '\\)']],
@@ -45,13 +36,27 @@ const MobileHomePage = () => {
     };
   }, []);
 
+  const handleShare = async () => {
+    try {
+      const link = await navigator.clipboard.readText();
+      const validPrefix = 'https://chatgpt.com/share/';
+      if (!link || !link.startsWith(validPrefix)) {
+        alert(`Clipboard does not contain a valid link. It must start with "${validPrefix}".`);
+        return;
+      }
+      // Add your existing share functionality here
+    } catch (error) {
+      console.error('Error sharing:', error);
+    }
+  };
+
   return (
     <MobileContainer>
-      <ButtonContainer>
-        <ScrollButton />
-        <CaptureLinkButton />
-      </ButtonContainer>
       <Conversations />
+      <RadialMenu 
+        onScrollClick={() => router.push('/about')}
+        onShareClick={handleShare}
+      />
     </MobileContainer>
   );
 };
