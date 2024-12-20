@@ -81,13 +81,21 @@
 }
 
 .message-icon {
+  display: none; /* Hide by default for assistant messages */
   flex-shrink: 0;
   width: 24px;
   height: 24px;
-  display: flex;
+  color: #fff;
+}
+
+.user .message-icon {
+  display: flex; /* Only show for user messages */
   align-items: center;
   justify-content: center;
-  color: #666;
+}
+
+.user.message {
+  align-items: baseline;
 }
 
 .message-content {

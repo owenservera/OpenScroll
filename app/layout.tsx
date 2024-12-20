@@ -6,8 +6,57 @@ import "../styles/test.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "AutoScroll",
-  description: "AutoScroll - Effortless web browsing",
+  metadataBase: new URL('https://www.openscroll.me'),
+  title: {
+    default: "OpenScroll",
+    template: "%s | OpenScroll"
+  },
+  description: "OpenScroll - Effortless web browsing with smart auto-scrolling technology. Save time and enhance your reading experience.",
+  keywords: ["auto scroll", "web browsing", "reading tool", "productivity", "browser extension", "scroll automation"],
+  authors: [{ name: "OpenScroll Team" }],
+  creator: "OpenScroll",
+  publisher: "OpenScroll",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: 'https://www.openscroll.me',
+    languages: {
+      'en-US': 'https://www.openscroll.me',
+    },
+  },
+  category: 'technology',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://www.openscroll.me',
+    siteName: 'OpenScroll',
+    title: 'OpenScroll - Smart Auto-Scrolling Technology',
+    description: 'OpenScroll - Effortless web browsing with smart auto-scrolling technology. Save time and enhance your reading experience.',
+    images: [
+      {
+        url: '/favicon/android-chrome-512x512.png',
+        width: 512,
+        height: 512,
+        alt: 'OpenScroll Logo',
+        type: 'image/png',
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'OpenScroll - Smart Auto-Scrolling Technology',
+    description: 'OpenScroll - Effortless web browsing with smart auto-scrolling technology. Save time and enhance your reading experience.',
+    images: ['/favicon/android-chrome-512x512.png'],
+  },
   icons: {
     icon: [
       { url: '/favicon/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
@@ -32,6 +81,27 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "OpenScroll",
+            "description": "OpenScroll - Effortless web browsing with smart auto-scrolling technology. Save time and enhance your reading experience.",
+            "applicationCategory": "BrowserExtension",
+            "operatingSystem": "Any",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "author": {
+              "@type": "Organization",
+              "name": "OpenScroll Team"
+            }
+          })}
+        </script>
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   );
