@@ -1,0 +1,493 @@
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"app\\layout.tsx","import":"Inter","arguments":[{"subsets":["latin"]}],"variableName":"inter"} ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/media/55c55f0601d81cf3-s.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/media/26a46d62cd723877-s.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/media/97e0cb1ae144a2a9-s.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/media/581909926a08bbc8-s.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/media/df0a9ae256c0569c-s.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/media/6d93bde91c0c2823-s.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/media/a34f9d1faa5f3315-s.p.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}@font-face {font-family: 'Inter Fallback';src: local("Arial");ascent-override: 90.44%;descent-override: 22.52%;line-gap-override: 0.00%;size-adjust: 107.12%
+}.__className_d65c78 {font-family: 'Inter', 'Inter Fallback';font-style: normal
+}
+
+/*!****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./styles/globals.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************/
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.conversation-title {
+  padding: 12px;
+  margin: 0;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.conversation-title:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.conversation-title span {
+  transition: transform 0.2s ease;
+}
+
+.conversation-title:hover span {
+  transform: translateY(2px);
+}
+
+.conversation-preview {
+  padding: 8px 12px 12px 36px;
+  color: #666;
+  font-size: 0.9em;
+  font-style: italic;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  width: fit-content;
+  max-width: 70%;
+  background-color: #3a3a3a;
+  color: #ffffff;
+  text-align: left;
+  align-self: flex-end;
+  margin-left: auto;
+  margin-right: 0; /* Add this to ensure right alignment */
+  padding: 10px 15px;
+  border-radius: 15px;
+  word-wrap: break-word;
+}
+
+.message {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px;
+  gap: 12px;
+}
+
+.message-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+}
+
+.message-content {
+  flex: 1;
+}
+
+.code-header {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  background-color: #343541;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  color: #999;
+}
+
+.code-header em {
+  font-style: normal;
+  font-size: 0.9em;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*!*************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./styles/test.css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************/
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #000000;
+  color: #e0e0e0;
+}
+
+* {
+  box-sizing: border-box;
+
+}
+
+.App {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Headers */
+h1, h2, h3 {
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.5rem; /* Increased font size */
+}
+
+.conversations-container {
+  width: 70%;
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 0; /* Remove padding to prevent extra space */
+  position: relative;
+  overflow-y: auto;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1024px) {
+  .conversations-container {
+    max-width: 90%;
+  }
+}
+
+/* Conversation block styling */
+.conversation-bubble {
+  display: flex; /* Set to flex */
+  flex-direction: column; /* Arrange children in a column */
+  max-width: 70%;
+  padding: 1rem;
+  margin: 2rem auto;
+  box-sizing: border-box;
+  background-color: #1e1e1e;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+
+/* Center and style the conversation title */
+.conversation-title {
+  text-align: left;
+  width: 100%; /* Ensure it takes full width */
+  border-bottom: 1px solid #444;
+  font-size: 2.3rem;
+  font-style: italic;
+  margin: 0.1rem 0; /* Removed bottom margin to make collapse smoother */
+  padding: 15px;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.2s ease, padding 0.2s ease;
+}
+
+.conversation-title:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.conversation-title span {
+  font-size: 1.2rem;
+  font-style: normal;
+  opacity: 0.7;
+  transition: transform 0.2s ease;
+}
+
+.conversation-title:hover span {
+  opacity: 1;
+}
+
+/* Add spacing after title when messages are visible */
+.conversation-bubble:not(.collapsed) .conversation-title {
+  margin-bottom: 2rem;
+}
+
+/* Messages styling */
+.message-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  align-items: stretch; /* Change this from flex-start */
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  margin-top: 1rem;
+}
+.message {
+  border-radius: 15px;
+  width: 98%;
+  word-wrap: break-word;
+  position: relative;
+  box-sizing: border-box;
+  
+  display: inline-block;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+}
+
+.message.user {
+  width: fit-content;
+  max-width: 70%;
+  background-color: #3a3a3a;
+  color: #ffffff;
+  text-align: left;
+  align-self: flex-end;
+  margin-left: auto;
+  margin-right: 0; /* Add this to ensure right alignment */
+  padding: 10px 15px;
+  border-radius: 15px;
+  word-wrap: break-word;
+}
+.message.assistant {
+  color: #e0e0e0;
+  text-align: left;
+  align-self: flex-start;
+  margin-right: auto;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 1rem; /* Increased font size */
+  background-color: #3b3b3b;
+  color: #e0e0e0;
+}
+
+th, td {
+  border: 1px solid #272727;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+tr:nth-child(even) {
+  background-color: #333;
+}
+
+/* Code Header Styling */
+.code-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2e323a;
+  padding: 0.3125rem 0.625rem;
+  border-radius: 0.625rem 0.625rem 0 0;
+  margin-bottom: 0;
+}
+
+.code-language {
+  
+  font-size: 0.85rem;
+}
+
+/* Code Snippet Highlighting */
+pre {
+  background: #000000;
+  
+  padding: 1rem;
+  border-radius: 0 0 0.875rem 0.875rem;
+  overflow-x: auto;
+  line-height: 1.6;
+  
+  margin: 0;
+  border: 1px solid #3c4048;
+}
+
+/* Buttons and Interactivity */
+.copy-button {
+  background: linear-gradient(135deg, #5e5f67, #3d3e44);
+  color: #ffffff;
+  border: none;
+  border-radius: 0.625rem;
+  padding: 0.5rem 0.5rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  margin-left: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+}
+
+.copy-button:hover {
+  background: linear-gradient(135deg, #6f707a, #4c4d55);
+  color: #e6b465;
+}
+
+.copy-button:active {
+  transform: scale(0.98);
+}
+a {
+  color: #4a90e2; /* Softer blue color */
+  text-decoration: none; /* Remove underline */
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+}
+
+a:hover {
+  color: #357ab8; /* Slightly darker blue on hover */
+}
+
+/* General Button Styling */
+.scroll-button, .capture-link-button {
+  position: fixed;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+  color: rgb(255, 255, 255);
+  transition: color 0.3s ease-in, filter 0.3s ease-in;
+  width: 120px; /* Fixed width */
+  height: 50px; /* Fixed height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-button {
+  top: 3rem;
+  left: 2%;
+}
+
+.capture-link-button {
+  top: 3rem;
+  right: 3%;
+}
+
+.scroll-button:hover, .capture-link-button:hover {
+  
+  color: rgb(112, 37, 37);
+  font-weight: bold;
+}
+.capture-link-button.clicked {
+  filter: url(#pixelate);
+  transition: none;
+}
+tip-button:hover 
+    {
+    position:relative;
+    left: 3px;
+    }
+.tip-button:active 
+    {
+    color:gold;
+    }
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 4px;
+}
+

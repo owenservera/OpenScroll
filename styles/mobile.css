@@ -1,266 +1,38 @@
-/* Mobile-specific styles - Optimized for devices up to 768px */
-@media (max-width: 768px) {
-  /* CSS Reset and Base Styles */
-  :root {
-    --nav-height: 60px;
-    --safe-area-top: calc(env(safe-area-inset-top, 0px) + var(--nav-height));
-    --safe-area-top: env(safe-area-inset-top, 0px);
-    --safe-area-bottom: env(safe-area-inset-bottom, 0px);
-    --safe-area-left: env(safe-area-inset-left, 0px);
-    --safe-area-right: env(safe-area-inset-right, 0px);
-    
-    --color-background: #000000;
-    --color-surface: #1e1e1e;
-    --color-surface-variant: #262626;
-    --color-user-message: #3a3a3a;
-    --color-text-primary: #ffffff;
-    --color-text-secondary: #e0e0e0;
-    --color-border: #444;
-    --color-code-background: #2e323a;
-    
-    --spacing-xs: 0.1rem;
-    --spacing-sm: 0.25rem;
-    --spacing-md: 0.5rem;
-    --spacing-lg: 0.75rem;
-    
-    --radius-sm: 4px;
-    --radius-md: 8px;
-    --radius-lg: 15px;
-    
-    --font-size-sm: 0.6rem;
-    --font-size-base: 1rem;
-    --font-size-lg: 1rem;
-    --font-size-xl: 1.5rem;
-  }
+.App {
+  text-align: center;
+}
 
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    -webkit-tap-highlight-color: transparent;
-  }
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
 
-  body {
-    background-color: var(--color-background);
-    color: var(--color-text-secondary);
-    font-family: 'Inter', -apple-system, system-ui, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow-x: hidden;
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
   }
+}
 
-  /* Layout Containers */
-  .App {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    min-height: 100vh;
-    padding: calc(var(--safe-area-top) + 1rem) 0 var(--safe-area-bottom);
-    overflow-x: hidden;
-  }
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
 
-  .conversations-container {
-    width: 100%;
-    max-width: 100%;
-    padding: 0 var(--spacing-md);
-    margin: 0 auto;
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
-    position: relative;
-  }
+.App-link {
+  color: #61dafb;
+}
 
-  /* Conversation Bubbles */
-  .conversation-bubble {
-    width: 100%;
-    max-width: min(600px, 95%);
-    margin: var(--spacing-md) auto;
-    padding: var(--spacing-lg);
-    background-color: var(--color-surface);
-    border-radius: var(--radius-lg);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
   }
-
-  .conversation-title {
-    font-size: clamp(var(--font-size-xl), var(--font-size-xl), var(--font-size-xl));
-    color: var(--color-text-primary);
-    border-bottom: 1px solid var(--color-border);
-    padding-bottom: var(--spacing-sm);
-    margin-bottom: var(--spacing-lg);
-    font-weight: 600;
-    letter-spacing: -0.02em;
-  }
-
-  /* Messages */
-  .message-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-lg);
-    width: 100%;
-  }
-
-  .message {
-    margin-bottom: var(--spacing-md);
-    --message-max-width: 100%;
-    position: relative;
-    width: fit-content;
-    max-width: var(--message-max-width);
-    padding: var(--spacing-md);
-    border-radius: var(--radius-lg);
-    font-size: var(--font-size-base);
-    line-height: 1.6;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-sm);
-  }
-
-  .message > * {
-    max-width: 100%;
-  }
-
-  .message.user {
-    background-color: var(--color-user-message);
-    color: var(--color-text-primary);
-    align-self: flex-end;
-    border-bottom-right-radius: var(--radius-sm);
-    text-align: left;
-    margin-left: auto;
-    margin-right: 0;
-    word-wrap: break-word;
-    max-width: 92%;
-    width: auto;
-  }
-
-  .message.assistant {
-    background-color: var(--color-surface-variant);
-    color: var(--color-text-secondary);
-    align-self: flex-start;
-    border-bottom-left-radius: var(--radius-sm);
-  }
-
-  /* Code Blocks */
-  .message .code-container {
-    width: 100%;
-    overflow: hidden;
-    border-radius: var(--radius-md);
-    background-color: var(--color-code-background);
-  }
-
-  .message .code-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--spacing-sm);
-    background-color: var(--color-code-background);
-    font-size: var(--font-size-sm);
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .message pre {
-    width: 100%;
-    padding: var(--spacing-md);
-    margin: 0;
-    overflow-x: auto;
-    background-color: var(--color-background);
-    font-size: var(--font-size-sm);
-    line-height: 1.5;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-  }
-
-  .message code {
-    font-family: 'SF Mono', Consolas, Monaco, monospace;
-  }
-
-  /* Tables */
-  .message .table-container {
-    width: 100%;
-    overflow-x: auto;
-    border-radius: var(--radius-md);
-    background-color: var(--color-surface-variant);
-    margin: var(--spacing-sm) 0;
-  }
-
-  .message table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: var(--font-size-sm);
-  }
-
-  .message th,
-  .message td {
-    padding: var(--spacing-sm);
-    text-align: left;
-    border: 1px solid var(--color-border);
-  }
-
-  .message th {
-    background-color: var(--color-background);
-    font-weight: 600;
-  }
-
-  @media (max-width: 768px) {
-    .NavContainer {
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-  }
-  .MobileContainer {
-    transition: padding-top 0.3s ease;
-  }
-
-  /* Links */
-  .message a {
-    color: #4a90e2;
-    text-decoration: none;
-    word-break: break-all;
-  }
-
-  .message a:active {
-    color: #357ab8;
-  }
-
-  /* Media */
-  .message img,
-  .message video {
-    max-width: 100%;
-    height: auto;
-    border-radius: var(--radius-md);
-  }
-
-  /* Scrollbar */
-  ::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 3px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  /* Performance Optimizations */
-  @supports (content-visibility: auto) {
-    .conversation-bubble {
-      content-visibility: auto;
-      contain-intrinsic-size: 0 500px;
-      contain: style layout paint;
-    }
-  }
-
-  /* Reduced Motion */
-  @media (prefers-reduced-motion: reduce) {
-    * {
-      animation: none !important;
-      transition: none !important;
-    }
+  to {
+    transform: rotate(360deg);
   }
 }

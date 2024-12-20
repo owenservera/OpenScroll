@@ -72,9 +72,34 @@ h3 {
   border-bottom: 1px solid #444;
   font-size: 2.3rem;
   font-style: italic;
-  margin: 0.1rem 0 3rem; /* Adjust margins for better spacing */
-  padding-bottom: 10px;
+  margin: 0.1rem 0; /* Removed bottom margin to make collapse smoother */
+  padding: 15px;
   color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.2s ease, padding 0.2s ease;
+}
+
+.conversation-title:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.conversation-title span {
+  font-size: 1.2rem;
+  font-style: normal;
+  opacity: 0.7;
+  transition: transform 0.2s ease;
+}
+
+.conversation-title:hover span {
+  opacity: 1;
+}
+
+/* Add spacing after title when messages are visible */
+.conversation-bubble:not(.collapsed) .conversation-title {
+  margin-bottom: 2rem;
 }
 
 /* Messages styling */

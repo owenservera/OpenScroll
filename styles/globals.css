@@ -28,6 +28,87 @@
   color: #61dafb;
 }
 
+.conversation-title {
+  padding: 12px;
+  margin: 0;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.conversation-title:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.conversation-title span {
+  transition: transform 0.2s ease;
+}
+
+.conversation-title:hover span {
+  transform: translateY(2px);
+}
+
+.conversation-preview {
+  padding: 8px 12px 12px 36px;
+  color: #666;
+  font-size: 0.9em;
+  font-style: italic;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  width: fit-content;
+  max-width: 70%;
+  background-color: #3a3a3a;
+  color: #ffffff;
+  text-align: left;
+  align-self: flex-end;
+  margin-left: auto;
+  margin-right: 0; /* Add this to ensure right alignment */
+  padding: 10px 15px;
+  border-radius: 15px;
+  word-wrap: break-word;
+}
+
+.message {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px;
+  gap: 12px;
+}
+
+.message-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+}
+
+.message-content {
+  flex: 1;
+}
+
+.code-header {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  background-color: #343541;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  color: #999;
+}
+
+.code-header em {
+  font-style: normal;
+  font-size: 0.9em;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

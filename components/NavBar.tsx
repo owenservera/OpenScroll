@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
+import { SkipForward, Play, PlusCircle, RefreshCw } from 'react-feather'; // Import the necessary Feather icons
 
 const NavContainer = styled.nav`
   position: fixed;
@@ -29,7 +30,7 @@ const NavButton = styled.button<{ $isActive?: boolean }>`
   border: none;
   color: ${props => props.$isActive ? '#39ff14' : '#ffffff'};
   font-size: 1.2rem;
-  padding: 8px;
+  padding: 0px;
   cursor: pointer;
   transition: color 0.3s ease, transform 0.2s ease;
 
@@ -146,15 +147,21 @@ const NavBar = () => {
 
   return (
     <NavContainer>
-      <NavButton onClick={handleRefresh}>↻</NavButton>
-      <NavButton onClick={captureLink}>+</NavButton>
+      <NavButton onClick={handleRefresh}>
+        <RefreshCw /> {/* Use the RefreshCw icon here */}
+      </NavButton>
+      <NavButton onClick={captureLink}>
+        <PlusCircle /> {/* Use the PlusCircle icon here */}
+      </NavButton>
       <NavButton 
         onClick={toggleAutoScroll}
         $isActive={isAutoScrolling}
       >
-        ⟳
+        <Play /> {/* Use the Play icon here */}
       </NavButton>
-      <NavButton onClick={scrollToEnd}>↓</NavButton>
+      <NavButton onClick={scrollToEnd}>
+        <SkipForward /> {/* Use the SkipForward icon here */}
+      </NavButton>
     </NavContainer>
   );
 };
