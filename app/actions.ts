@@ -1,6 +1,6 @@
 "use server";
 
-import client from "@/lib/mongodb";
+import client from "../lib/mongodb";
 
 export async function testDatabaseConnection() {
   const isConnected = false; // Changed from 'let' to 'const'
