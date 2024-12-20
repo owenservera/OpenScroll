@@ -1,2 +1,12 @@
 .vercel
 node_modules
+.next
+.env.local
+.env.production
+.env.development
+.env.test
+.env
+package-lock.json
+yarn.lock
+.npmrc
+npm-debug.log*
