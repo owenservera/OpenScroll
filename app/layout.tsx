@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     description: 'OpenScroll - Effortless web browsing with smart auto-scrolling technology. Save time and enhance your reading experience.',
     images: [
       {
-        url: '/favicon/android-chrome-512x512.png',
+        url: 'https://www.openscroll.me/favicon/android-chrome-512x512.png',
         width: 512,
         height: 512,
         alt: 'OpenScroll Logo',
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'OpenScroll - Smart Auto-Scrolling Technology',
     description: 'OpenScroll - Effortless web browsing with smart auto-scrolling technology. Save time and enhance your reading experience.',
-    images: ['/favicon/android-chrome-512x512.png'],
+    images: ['https://www.openscroll.me/favicon/android-chrome-512x512.png'],
   },
   icons: {
     icon: [
